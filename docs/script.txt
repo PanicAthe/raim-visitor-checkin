@@ -23,7 +23,7 @@ const COLLECTION_NAME = "visitors";
 const SHEET_NAME = "시트1"; 
 
 // 6. 이메일 알림 받을 주소 (오류 발생 시 알림)
-const ALERT_EMAIL = "cjkim@fnj.or.kr"; 
+const ALERT_EMAIL = "your-email@example.com";
 
 // ===========================================================================
 /**

@@ -475,7 +475,7 @@ Firebase 데이터가 엑셀로 백업되고, Firestore에서 삭제되었습니
 2. Apps Script 로그 검토
 3. Firebase 콘솔에서 상태 확인
 4. 이 문서의 **트러블슈팅** 섹션 참고
-5. 해결 안 되면 각 서비스 공식 문서 확인 or [panciathe@naver.com](mailto:panciathe@naver.com) 연락주세요
+5. 해결 안 되면 각 서비스 공식 문서 확인 or 담당자에게 연락주세요
 
 **유용한 링크:**
 
