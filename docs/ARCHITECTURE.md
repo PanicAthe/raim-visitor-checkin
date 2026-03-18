@@ -19,7 +19,7 @@ graph TB
     end
 
     subgraph 로컬_저장소
-        LOCAL["localStorage<br/>일일 데이터 임시 저장<br/>자정마다 초기화"]
+        LOCAL["localStorage<br/>일일 데이터 임시 저장<br/>앱 실행 시 이전 날짜 데이터 자동 정리"]
     end
 
     subgraph 관리자_기능
@@ -117,7 +117,7 @@ graph LR
     end
 
     subgraph "백엔드"
-        FB["Firebase<br/>Firestore + Auth"]
+        FB["Firebase<br/>Firestore"]
     end
 
     DEV -->|git push| GIT
