@@ -1,5 +1,7 @@
 ## 1. 전체 시스템 아키텍처
 
+> 이 문서는 공개용 기술 설명 자료입니다. 실제 특정 기관의 운영 구조를 문서화한 것이 아니라, 저장소에 포함된 개인 프로젝트의 구성 방식을 요약한 내용입니다.
+
 ```mermaid
 graph TB
 
@@ -8,7 +10,7 @@ graph TB
     end
 
     subgraph 접근_제어
-        LOCK["관리자 잠금 화면<br/>최초 진입 시 필수<br/>관람실 선택 + 비밀번호"]
+        LOCK["관리자 잠금 화면<br/>최초 진입 시 필수<br/>공간 선택 + 비밀번호"]
     end
 
     subgraph 프론트엔드_메인
@@ -33,7 +35,7 @@ graph TB
 
     subgraph 데이터_계층
         FIRESTORE["Firebase Firestore<br/>visitors 컬렉션<br/>locations 컬렉션<br/>Apps Script 전용 조회"]
-        CACHE["localStorage 캐시<br/>일일 통계 저장<br/>관람실 목록 캐시"]
+        CACHE["localStorage 캐시<br/>일일 통계 저장<br/>공간 목록 캐시"]
     end
 
     subgraph 자동화_계층
@@ -52,7 +54,7 @@ graph TB
     end
 
     USER -->|1. 최초 접속| LOCK
-    LOCK -->|관람실 목록<br/>캐시 우선| FIRESTORE
+        LOCK -->|공간 목록<br/>캐시 우선| FIRESTORE
     LOCK -->|인증 성공| MAIN
 
     MAIN --> UI1
@@ -69,7 +71,7 @@ graph TB
 
     LOGO -->|3번 터치| ADMIN
     ADMIN -->|통계 조회| LOCAL
-    ADMIN -->|관실 CRUD| FIRESTORE
+    ADMIN -->|공간 CRUD| FIRESTORE
 
     FIRESTORE -->|캐시| CACHE
 
@@ -148,7 +150,7 @@ src/components/
 │   ├── AgeGroupChart.jsx      # 연령대 분포 막대 차트
 │   ├── GenderChart.jsx        # 성별 분포 도넛 차트
 │   ├── BackupSection.jsx      # 데이터 백업 섹션
-│   └── RoomManagementModal.jsx# 관람실 추가/삭제 모달
+│   └── RoomManagementModal.jsx# 공간 추가/삭제 모달
 ├── AdminLockScreen.jsx        # 관리자 인증 화면
 ├── CameraCard.jsx             # 카메라 스캔 영역
 ├── Dashboard.jsx              # 메인 대시보드 컨테이너
@@ -184,7 +186,7 @@ erDiagram
     }
 
     LOCATIONS {
-        string name "관람실 이름"
+        string name "공간 이름"
         string createdAt "생성 시간 (serverTimestamp)"
     }
 

@@ -1,5 +1,7 @@
-// ================= [설정 영역: firebase 초기화 시 JSON 파일 내용을 보고 채워주세요] =================
-// JSON 파일 : firebase 접속 -> 프로젝트 설정 → "서비스 계정" -> "새 비공개 키 생성" → JSON 파일 다운로드
+// ================= [예시 템플릿: 공개 저장소용 설정 샘플] =================
+// 이 파일은 Google Apps Script 백업 흐름을 설명하기 위한 예시 템플릿입니다.
+// 실제 서비스 계정 키, 이메일, 프로젝트 식별자 등은 이 저장소에 포함하지 마세요.
+// JSON 파일 : Firebase 프로젝트 설정 → "서비스 계정" → "새 비공개 키 생성" → JSON 파일 다운로드
 
 // 1. firebase-adminsdk... 이메일 
 // Firebase 콘솔 → 프로젝트 설정 → 서비스 계정 → 새 비공개 키 생성 시 확인 가능
@@ -14,15 +16,14 @@ const PRIVATE_KEY = "-----BEGIN PRIVATE KEY-----\n여기에_실제_키_내용을
 // Firebase 콘솔 → 프로젝트 설정 → 일반 탭 → 프로젝트 ID
 const PROJECT_ID = "your-firebase-project-id"; 
 
-// 4. Firestore 컬렉션 이름 (매우 중요 ★)
-// Firebase 콘솔 -> Firestore Database -> 데이터 탭에 보이는 첫 번째 폴더 이름
-// "visitors" 라고 되어 있을 겁니다. 다르다면 확인 후 똑같이 맞춰주세요.
+// 4. Firestore 컬렉션 이름 (예시)
+// Firebase 콘솔 -> Firestore Database -> 데이터 탭에 보이는 컬렉션 이름과 맞춰주세요.
 const COLLECTION_NAME = "visitors"; 
 
-// 5. 시트 탭 이름 (매우 중요 ★, 설정된 시트 이름이 정확해야 데이터 백업 가능)
+// 5. 시트 탭 이름 (예시)
 const SHEET_NAME = "시트1"; 
 
-// 6. 이메일 알림 받을 주소 (오류 발생 시 알림)
+// 6. 이메일 알림 받을 주소 (선택)
 const ALERT_EMAIL = "your-email@example.com";
 
 // ===========================================================================
